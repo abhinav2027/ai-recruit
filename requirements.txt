@@ -1,0 +1,10 @@
+streamlit
+openai
+httpx
+spacy
+requests
+langchain
+langchain-experimental
+langchain-openai
+databutton
+pandas
