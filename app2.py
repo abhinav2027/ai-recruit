@@ -222,8 +222,6 @@ if st.button("Submit"):
                     st.write("Successfully inserted into profiles")
                   else:
                     st.write(response_profile.text)
-                else:
-                  st.write("NO GRAPH")
 
   else:
         st.error(f"Failed to insert data. Status code: {response.status_code}")
