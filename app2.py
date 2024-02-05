@@ -152,7 +152,7 @@ if st.button("Submit"):
         if response.status_code == 200:
             data = response.json()
             profiles = [item['link'] for item in data.get('items', [])]
-            for profile_link in profiles[:1]:
+            for profile_link in profiles[:5]:
               profile_data = {}
               publications = []
               experience = []
