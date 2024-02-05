@@ -1,6 +1,6 @@
 streamlit
 openai
-httpx
+httpx==0.26.0
 spacy
 requests
 langchain
