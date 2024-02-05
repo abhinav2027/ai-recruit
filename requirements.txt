@@ -1,4 +1,5 @@
 streamlit
+tabulate
 openai
 httpx==0.26.0
 requests
