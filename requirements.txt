@@ -1,7 +1,6 @@
 streamlit
 openai
 httpx==0.26.0
-spacy
 requests
 langchain
 langchain-experimental
