@@ -9,7 +9,6 @@ from langchain_openai import ChatOpenAI
 import pandas as pd
 from langchain_openai import OpenAI
 import os
-import databutton as db
 import re
 openai.api_key = "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"
 os.environ['OPENAI_API_KEY']="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"
