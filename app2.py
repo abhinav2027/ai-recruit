@@ -1,7 +1,6 @@
 import streamlit as st
 import httpx
 import openai
-import spacy
 import requests
 from langchain.agents.agent_types import AgentType
 from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
@@ -124,10 +123,8 @@ experience = st.slider("Experience (in years):", 0, 20, 5)
 skills = st.text_input("Skills:")
 location = st.text_input("Location:")
 description = st.text_area("Job Description:")
-nlp = spacy.load("en_core_web_sm")
-doc = nlp(description)
-filtered_text = " ".join([token.text for token in doc if not token.is_stop])
-user_job_description = "Given the job description below, extract key parameters related to skills, experience, and location. Just give one word answers for example if its skills then you might want to generate 'skills : python,ssis,automation'. Job Description : {filtered_text}"
+filtered_text = description
+user_job_description = f"Given the job description below, extract key parameters related to skills, experience, and location. Just give one word answers for example if its skills then you might want to generate 'skills : python,ssis,automation'. Job Description : {filtered_text}"
 
 job_data = {
         'profile': profile,
