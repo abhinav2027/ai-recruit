@@ -9,8 +9,7 @@ import pandas as pd
 from langchain_openai import OpenAI
 import os
 import re
-openai.api_key = "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"
-os.environ['OPENAI_API_KEY']="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"
+
 SUPABASE_URL = "https://pvyzkqvjxotrmtfzmjko.supabase.co"
 SUPABASE_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB2eXprcXZqeG90cm10ZnptamtvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNjk2MDU4NCwiZXhwIjoyMDIyNTM2NTg0fQ.nmg459IRipxJcu6x2a1xf_xEJb7hA--4tZv1mMqCcOM"
 openai.api_key = "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"
@@ -123,9 +122,11 @@ experience = st.slider("Experience (in years):", 0, 20, 5)
 skills = st.text_input("Skills:")
 location = st.text_input("Location:")
 description = st.text_area("Job Description:")
+openai_key = st.text_input("OpenAI API Key:")
 filtered_text = description
 user_job_description = f"Given the job description below, extract key parameters related to skills, experience, and location. Just give one word answers for example if its skills then you might want to generate 'skills : python,ssis,automation'. Job Description : {filtered_text}"
-
+openai.api_key = openai_key
+os.environ['OPENAI_API_KEY']= openai_key
 job_data = {
         'profile': profile,
         'experience': experience,
